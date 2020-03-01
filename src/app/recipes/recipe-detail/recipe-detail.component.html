@@ -1,13 +1,19 @@
 <div class="row">
   <div class="col col-xs-12">
-    <img src="" alt="" class="img-responsive" />
+    <img
+      [src]="selectedRecipe.imgUrl"
+      alt="{{ selectedRecipe.name }}"
+      class="img-responsive"
+      style="max-height: 350px;"
+    />
   </div>
 </div>
 <div class="row">
   <div class="col col-xs-12">
-    <h1>Recipe Name</h1>
+    <h1>{{ selectedRecipe.name }}</h1>
   </div>
 </div>
+<hr />
 <div class="row">
   <div class="col col-xs-12">
     <div class="btn-group">
@@ -22,13 +28,14 @@
     </div>
   </div>
 </div>
+<hr />
 <div class="row">
   <div class="col col-xs-12">
-    Description
+    {{ selectedRecipe.description }}
   </div>
 </div>
 <div class="row">
   <div class="col col-xs-12">
-    Ingredients
+    List of Ingredients (to do)
   </div>
 </div>
