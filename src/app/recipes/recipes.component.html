@@ -3,10 +3,6 @@
     <recipe-list></recipe-list>
   </div>
   <div class="col-md-7">
-    <recipe-detail
-      *ngIf="selectedRecipe; else elseBlock"
-      [selectedRecipe]="selectedRecipe"
-    ></recipe-detail>
-    <ng-template #elseBlock>Please select a recipe to see details!</ng-template>
+    <router-outlet></router-outlet>
   </div>
 </div>

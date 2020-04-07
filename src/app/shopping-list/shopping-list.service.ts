@@ -7,17 +7,14 @@ export class ShoppingListService {
     Ingredient[]
   >();
 
-  private _ingredients: Array<Ingredient> = [
-    new Ingredient("apple", 5),
-    new Ingredient("tomato", 10)
-  ];
+  private _ingredients: Array<Ingredient> = [];
 
   get ingredients() {
     return [...this._ingredients];
   }
 
   addIngredients(...ingredients: Ingredient[]) {
-    ingredients.forEach(ingredient => {
+    ingredients.forEach((ingredient) => {
       this._ingredients.push(ingredient);
     });
     this.ingredientChanged.emit([...this._ingredients]);
