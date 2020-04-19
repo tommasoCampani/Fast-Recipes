@@ -1,1 +1,98 @@
-<p>recipe-edit works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success">Save</button>
+          <button type="button" class="btn btn-danger">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              formControlName="name"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imageUrl">Image URL</label>
+            <input
+              type="text"
+              id="imageUrl"
+              name="imageUrl"
+              class="form-control"
+              formControlName="imageUrl"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <img
+            [src]="recipeForm.get('imageUrl').value"
+            width="300px"
+            class="img-responsive"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Description</label>
+            <textarea
+              type="text"
+              id="description"
+              name="description"
+              class="form-control"
+              formControlName="description"
+              rows="6"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" formArrayName="ingredients">
+          <h4>Ingredients</h4>
+          <div
+            class="row"
+            *ngFor="let ingredientCtrl of controls; let i = index"
+            [formGroupName]="i"
+          >
+            <div class="col-xs-8">
+              <input
+                type="text"
+                placeholder="Ingredient name"
+                formControlName="ingName"
+                id="ingName"
+                name="ingName"
+                class="form-control"
+              />
+            </div>
+            <div class="col-xs-3">
+              <input
+                type="number"
+                placeholder="Qta"
+                formControlName="ingAmount"
+                id="ingAmount"
+                name="ingAmount"
+                class="form-control"
+              />
+            </div>
+            <div class="col-xs-1">
+              <button id="btnDeleteIng" class="btn btn-danger">X</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
