@@ -35,4 +35,9 @@ export class RecipeDetailComponent implements OnInit {
       relativeTo: this.activatedRoute,
     });*/
   }
+
+  onDeleteRecipe(id: number) {
+    this.recipeService.deleteRecipe(id);
+    this.router.navigate(["/recipes"], { relativeTo: this.activatedRoute });
+  }
 }
