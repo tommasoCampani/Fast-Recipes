@@ -42,14 +42,14 @@ export class RecipeService {
     this.onUpdatedRecipe.next(this._recipes);
   }
 
-  public updateRecipe(id: number, newRecipe: Recipe) {
+  public updateRecipe(id: string, newRecipe: Recipe) {
     let editingRecipe = this.getRecipe(id);
     const idx = this._recipes.indexOf(editingRecipe);
     this._recipes[idx] = newRecipe;
     this.onUpdatedRecipe.next(this._recipes);
   }
 
-  public deleteRecipe(id: number) {
+  public deleteRecipe(id: string) {
     let deletingRecipe = this.getRecipe(id);
     const idx = this._recipes.indexOf(deletingRecipe);
     this._recipes.splice(idx, 1);

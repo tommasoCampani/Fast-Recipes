@@ -18,7 +18,6 @@ export class DataStorageService {
       })
       .pipe(
         map((responseData) => {
-          console.log(responseData);
           const recipes = new Array<Recipe>();
 
           for (const key in responseData) {
@@ -34,9 +33,6 @@ export class DataStorageService {
             );
             recipes.push(recipe);
           }
-
-          console.log(recipes);
-
           return recipes;
         }),
         tap((recipes: Recipe[]) => {
