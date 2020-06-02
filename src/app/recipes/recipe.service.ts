@@ -11,7 +11,7 @@ export class RecipeService {
   private _recipes: Array<Recipe> = [
     new Recipe(
       1,
-      "Test Recipe",
+      "Test Recipe 1",
       "This is a test recipe",
       "https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_960_720.jpg",
       [new Ingredient("Potatos", 1), new Ingredient("Meat", 1)]
